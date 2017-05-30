@@ -1,0 +1,23 @@
+<ion-view title="Login" id="page4">
+  <ion-content padding="true" class="has-header">
+    <form id="login-form1" class="list">
+      <ion-list id="login-list2">
+        <label class="item item-input" id="login-input1">
+          <span class="input-label">User Name</span>
+          <input type="text" placeholder="" ng-model="loginDetails.username">
+        </label>
+        <label class="item item-input" id="login-input2">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="" ng-model="loginDetails.password" >
+        </label>
+      </ion-list>
+      <p class="errorMessage">{{loginDetails.errorMessage}}</p>
+      <button id="login-button1" style="border-radius:0px 0px 0px 0px;" class="button button-positive  button-block button-outline"  ng-click="loginRequest()">Log in</button>
+      <a href-inappbrowser="/signup" id="login-button16" style="font-style:italic;text-align:left;border-radius:0px 0px 0px 0px;" class="button button-positive button-small button-clear">forgot password</a>
+      <h4 id="login-heading1" style="color:#000000;text-align:center;">OR</h4>
+      <button id="login-button5" style="font-weight:500;border-radius:0px 0px 0px 0px;" class="button button-positive  button-block">login with Facebook</button>
+      <button id="login-button6" style="font-weight:500;border-radius:0px 0px 0px 0px;" class="button button-assertive  button-block">login with Gmail</button>
+      <a href-inappbrowser="/signup" id="login-button2" style="border-radius:0px 0px 0px 0px;" class="button button-positive  button-block button-clear">Or create an account</a>
+    </form>
+  </ion-content>
+</ion-view>

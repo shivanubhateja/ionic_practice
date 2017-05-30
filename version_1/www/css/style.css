@@ -1,0 +1,179 @@
+/* Empty. Add your own CSS if you like */
+.errorMessage{
+	color: red;
+	text-align: center;
+}
+textarea#note, textarea#comment{
+	width:100%;
+	box-sizing:border-box;
+	display:block;
+	max-width:100%;
+	line-height:1.5;
+	height: 65px;
+	padding:15px 15px 30px;
+	border-radius:3px;
+	border:1px solid #ddd;
+	resize: none;
+	/*font:14px Tahoma, cursive;*/
+	transition:box-shadow 0.5s ease;
+	/*box-shadow:0 4px 6px rgba(0,0,0,0.1);*/
+	font-smoothing:subpixel-antialiased;
+	    height: 65px;
+}
+textarea#comment{
+	border:none;
+	padding:5px 15px 5px 15px;
+	max-width:90%;
+}
+.options{
+	font-weight: bold;
+}
+.comment-button.ion-android-send{
+	height: 100%;
+	vertical-align: middle;
+	display: table;
+	text-align: center;
+	font-size: 25px;
+    width: 100%;
+}
+.comment-button.ion-android-send:before{
+	display: table-cell;
+	vertical-align: middle;
+}
+.swiper-slide{
+	text-align: center;
+}
+.scroll-refresher .ionic-refresher-content{
+	bottom:20px;
+}
+.dateBar{
+	margin: 0;
+    padding: 5px;
+    min-height: initial;
+    border: none;
+}
+
+.bar.bar-stable .title, .bar-stable .button.button-clear, .bar-stable .button, .bar-stable .button:hover	{
+	color:#fff;
+}
+[nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar, .bar.bar-stable{
+	background: #0d47a1; 
+	background-color: #0d47a1;
+}
+.bar .title{
+	font-weight: bold;
+    font-size: 18px;
+}
+.button.button.button-icon.icon.ion-ios-close-empty:before{
+	font-size: 60px;
+}
+button.button.button-icon.button-clear.ion-navicon:before{
+	font-size: 37px;
+}
+button.button.button-icon.icon.ion-compose{
+	font-size: 37px;
+}
+/*.bar{
+	height:88px;
+}
+.title.title-center.header-item{
+	    left: 45px;
+    right: 65px;
+    top: 44px;
+}
+.has-header{
+	    top: 88px;
+}*/
+
+//bottom sheet
+/*
+.modal.bottom-sheet {
+  bottom: 0;  
+  min-height: initial;
+  top: initial;
+  height: 100px;
+  border-width: 1px;
+  border-style: solid;
+}
+.modal {
+    display: block;
+    position: absolute;
+     top: initial; 
+    bottom: 0;
+    z-index: 10;
+    overflow: hidden;
+    min-height: 35%;
+    width: 100%;
+    background-color: #fff;
+}
+@media (min-width: 680px)
+.modal {
+    top: 60%;
+    bottom: 0%;
+    min-height: 240px;
+    width: 100%;
+}
+*/
+@media (min-width: 680px)
+.modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+}
+.modal .pane, .view{
+	overflow: scroll;
+}
+.swiper-wrapper{
+	position: relative;
+}
+.selection-icon{
+	position: absolute; 
+	top: 5px; 
+	right: 5px; 
+	top: 12px; 
+	right: 14px; 
+	font-size: 23px;
+	width:20px;
+	height: 20px;
+	background-color: white;
+	color: #64DD17;
+	border-radius: 30px;
+}
+.selection-icon.not-selected{
+	color: grey;
+}
+.expertiseName{
+	text-align: center;
+	font-weight: bold;
+	padding-bottom: 0;
+	margin-bottom:0
+}
+.eachExpertiseParentDiv{
+	position: relative; 
+}
+.boxShadow{
+	/*box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2)*/
+}
+.image_epertise{
+	width: 100%;
+    height: 64px;
+}
+.headerSelection{
+	position: fixed;
+	background-color: #0d47a1;
+	color: white;
+	width: 100%;
+	padding: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    z-index: 10;
+}
+.top-margin{
+	margin-top: 5px;
+}
+.top-margin:first-child{
+	margin-top: 40px;
+}

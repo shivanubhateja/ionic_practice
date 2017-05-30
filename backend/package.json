@@ -1,0 +1,23 @@
+{
+  "name": "tryCloudUpload",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "bower": "~1.8.0",
+    "cloudinary": "~1.4.6",
+    "connect-multiparty": "^2.0.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.1",
+    "express": "~4.14.0",
+    "mongoose": "^4.7.6",
+    "path": "~0.12.7",
+    "underscore": "^1.8.3"
+  }
+}

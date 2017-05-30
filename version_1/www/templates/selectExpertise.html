@@ -1,0 +1,29 @@
+ <div class="modal">
+	<h3 class="headerSelection">Favorite Topics</h3>
+  <ion-pane>
+     <div class="modal" ng-init="expertise.loadImages()" >
+	         <div class="row top-margin" ng-repeat="image in expertise.fields" ng-if="$index % 4 === 0">
+		        <div class="col col-25 eachExpertiseParentDiv" ng-if="$index < expertise.fields.length" ng-click="expertise.addSelection($index)" ng-class="{boxShadow : expertise.fields[$index].selected}">
+			        <i class="icon-right ion-checkmark-circled selection-icon not-selected" ng-style="expertise.fields[$index].selected && {'color': '#64DD17'}"></i>
+		            <img ng-src="{{expertise.fields[$index].src}}" class="image_epertise" />
+		            <p class="expertiseName">{{expertise.fields[$index].name}}</p>
+		        </div>
+		        <div class="col col-25  eachExpertiseParentDiv" ng-if="$index + 1 < expertise.fields.length" ng-click="expertise.addSelection($index+1)"  ng-class="{boxShadow : expertise.fields[$index + 1].selected}">
+		            <i class="icon-right ion-checkmark-circled selection-icon not-selected" ng-style="expertise.fields[$index+1].selected && {'color': '#64DD17'}"></i>
+		            <img ng-src="{{expertise.fields[$index + 1].src}}" class="image_epertise" />
+		            <p class="expertiseName">{{expertise.fields[$index +1].name}}</p>
+		        </div>
+		        <div class="col col-25 eachExpertiseParentDiv" ng-if="$index + 2 < expertise.fields.length" ng-click="expertise.addSelection($index+2)" ng-class="{boxShadow : expertise.fields[$index + 2].selected}">
+		            <i class="icon-right ion-checkmark-circled selection-icon not-selected" ng-style="expertise.fields[$index+2].selected && {'color': '#64DD17'}"></i>
+		            <img ng-src="{{expertise.fields[$index + 2].src}}"  class="image_epertise" />
+		            <p class="expertiseName">{{expertise.fields[$index +2].name}}</p>
+		        </div>
+		        <div class="col col-25 eachExpertiseParentDiv" ng-if="$index + 3 < expertise.fields.length" ng-click="expertise.addSelection($index+3)" ng-class="{boxShadow : expertise.fields[$index + 3].selected}">
+		            <i class="icon-right ion-checkmark-circled selection-icon not-selected" ng-style="expertise.fields[$index+3].selected && {'color': '#64DD17'}"></i>
+		            <img ng-src="{{expertise.fields[$index + 3].src}}" class="image_epertise" />
+		            <p class="expertiseName">{{expertise.fields[$index +3].name}}</p>
+		        </div>
+	    </div>
+	  </div>
+  </ion-pane>
+</div>		 

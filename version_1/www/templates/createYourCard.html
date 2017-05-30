@@ -1,0 +1,39 @@
+<ion-view title="Create your card" id="page7">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-ios-close-empty" ng-click="goToCards()"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <form id="createYourCard-form3" class="list">
+      <label class="item item-select" id="createYourCard-select1"> 
+        <span class="input-label">Category</span> 
+        <select ng-model="postData.categorySelected">
+          <option ng-repeat="category in categories">{{category}}</option>
+        </select>
+      </label>
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+        <span class="input-label">About the card</span>
+        <textarea ng-model="postData.aboutThePost" id="note"></textarea>
+    </form>
+    <div id="createYourCard-container2">
+      <button id="createYourCard-button10" style="font-weight:600;border-radius:0px 0px 0px 0px; float: right;" class="button button-dark  button-clear icon ion-images" ng-click="showActionsheet()"></button>
+      <p style="font-size: 12px">
+        Make it more descriptive by adding images. Click on camera button to add image
+      </p>
+    </div>
+      <ion-slides disable-side-menu-drag="" ng-show="postData.sliderInCreate.length>0" options="{'loop': false, speed:500}" slider="data.sliderDelegate" id="createYourCard-slider2" style="width:100%;height:300px;">
+      <ion-slide-page ng-repeat="image in postData.sliderInCreate" id="createYourCard-slide27" style="center;background-size:cover;"><img ng-src={{image.imageSrc}} style="">
+      </ion-slide-page>
+    </ion-slides>
+    <form id="createYourCard-form4" class="list">
+      <div class="spacer" style="width: 300px; height: 22px;"></div>
+      <div id="createYourCard-markdown5" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">Enter options below</p>
+      </div>
+      <label ng-repeat="i in ['1','2','3','4']" class="item item-input" id="createYourCard-input{{i}}">
+        <input type="text" ng-model="postData.options[i-1].option" placeholder="Option {{i}}" class="options">
+      </label>
+      <button id="createYourCard-button12" style='border-radius:0px 0px 0px 0px;' class="button button-positive  button-block" ng-click="postCard.post()"><b>Done ! POST iT</b></button>
+<!--       <a ui-sref="menu.cards" id="createYourCard-button9" style="font-weight:500;font-size:14px;border-radius:0px 0px 0px 0px;" class="button button-assertive button-small button-block"><b>Cancel</b></a> -->
+    </form>
+  </ion-content>
+</ion-view>

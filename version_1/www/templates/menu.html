@@ -1,0 +1,43 @@
+<ion-side-menus enable-menu-with-back-views="false" delegate-handle="deli">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-header-bar class="bar-stable">
+      <div class="title">Menu</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header ">
+      <ion-list id="menu-list1">
+        <ion-item id="menu-list-item1" ui-sref="menu.cards" ui-sref-opts="{reload: true}" menu-close="">All cards</ion-item>
+        <ion-item id="menu-list-item2" ui-sref="menu.myCards" ui-sref-opts="{reload: true}" menu-close="">Posts</ion-item>
+        <ion-item id="menu-list-item3" ui-sref="menu.account" ui-sref-opts="{reload: true}" menu-close="">Account</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+    <ion-side-menu side="right" id="side-menu21" >
+    <ion-header-bar class="bar-stable">
+      <div class="title">Comments</div>
+    </ion-header-bar>
+    <ion-content padding="true" class="side-menu-right has-header ">
+        <ion-refresher on-refresh="fetchComments(comments.postNumber)">
+      </ion-refresher>
+      <ul style="padding:0 10px" ng-if="comments.comments.length>0">
+        <pre>          
+        <li style="word-break: break-all;" ng-repeat="comment in comments.comments | orderBy: '-time'"><b>{{comment.username}} </b> {{comment.comment}}</li>
+        </pre>
+      </ul>
+      <h3 style="text-align: center;" ng-if="!comments.comments">Be first to comment</h3>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>Footer</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-side-menu>
+</ion-side-menus>

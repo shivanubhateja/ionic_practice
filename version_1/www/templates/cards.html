@@ -1,0 +1,55 @@
+<ion-view title="Cards" id="page1">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-compose" ng-click="composeCard()"></button>
+  </ion-nav-buttons>
+  <ion-content class=" manual-remove-top-padding has-header">
+  <ion-refresher on-refresh="doRefresh()">
+      </ion-refresher>
+  <link rel="prefetch" collection-repeat="url in cards.prefetchUrls" ng-href="{{url}}">
+  <div style="background-color: #f5f5f5;">
+    <div  ng-repeat="currentCard in cards.queue" class="list card" id="cards-card21" style="box-shadow: none;margin:0 0 10px 0">
+      <ion-item class="item-avatar" id="cards-list-item6">
+        <img ng-src="{{currentCard.profilepicurl || '../img/avatar_1.png'}}" ng-style="!currentCard.profilepicurl && {'opacity': '0.4'}">
+        <h2>{{currentCard.username}}</h2>
+      </ion-item>
+      <ion-slides disable-side-menu-drag="" ng-show="currentCard.sliderInCreate.length>0" options="{'loop': false,slidesPerView:1}" slider="slider1" delegate-handle="slider1" id="cards-slider1" style="width:100%;height:300px;">
+        <ion-slide-page id="cards-slide24" ng-repeat="image in currentCard.sliderInCreate" style=""><div style="position: absolute;width:100%; height: 100%;-webkit-filter: blur(15px)  opacity(0.4);-moz-filter: blur(15px) opacity(0.4);-ms-filter: blur(15px) opacity(0.4);-o-filter: blur(15px) opacity(0.4);filter: blur(15px) opacity(0.4); background-image: url('{{image.imageSrc}}'); background-size: cover; z-index: 0"></div>
+        <!-- <div style="height: 100%; width: 100%;display: list-item;"> -->
+          <img ng-src={{image.imageSrc}} style="position: relative;z-index: 1; vertical-align: middle;">
+        <!-- </div> -->
+        </ion-slide-page>
+      </ion-slides>
+      <div class="item item-body" style="border-top: 0;margin: 0;padding: 5px 10px;" id="cards-list-item-container2">
+        <div id="cards-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">{{currentCard.aboutThePost}}</p>
+        </div>
+      </div>
+    <form id="cards-form6" class="list" style="margin-bottom: 0;border-bottom: : 1px solid #ddd">
+      <ion-radio id="cards-radio2" style="border: 0;" ng-click="(currentCard.previousSelectedIndex !== $index) && cards.submitVote(currentCard.cardNumber, $index, $parent.$index)" ng-repeat="option in currentCard.options" ng-model="currentCard.optionSelectedIndex" ng-value="$index" name="voteSelection{{currentCard.cardNumber}}">{{option.option}} 
+      <!-- <i class="fa fa-pie-chart" style="float:right;font-size: 20px;" aria-hidden="true">
+      <sub  ng-if="currentCard.totalVotes>0" style="font-size: 10px;">{{(option.votes/currentCard.totalVotes)*100 | number:1}}</sub>
+      <sub ng-if="currentCard.totalVotes===0" style="font-size: 10px;">0</sub></i> -->
+      <span style="float:right;">{{option.votes}}</span>
+      </ion-radio>
+    </form>
+<div>
+  <ul style="padding: 0px 15px;border-top : 1px solid #ddd"">
+    <li><b>{{currentCard.top2Comments[1].username}} </b> {{currentCard.top2Comments[1].comment}}</li>
+    <li><b>{{currentCard.top2Comments[0].username}} </b> {{currentCard.top2Comments[0].comment}}</li>
+  </ul>
+</div>
+      <div style="display: inline-flex; width: 100%"> 
+        <textarea ng-model="currentCard.comment" id="comment" placeholder="comment"></textarea>
+        <div style="width:10%">
+        <div class="icon-right ion-android-send comment-button" ng-click="currentCard.comment && postComment(currentCard.cardNumber, $index)"></div>
+        </div>
+      </div>
+    <button id="cards-button"{{$index}} style="padding-bottom: 14px;font-weight:500;font-size:14px;border-radius: 0px;background-color: transparent;color: black;text-align: left;border: 0;margin-top: 0px;margin-bottom: 0px;min-height: 9px;line-height: initial;" class="button button-positive  button-block" ng-click="fetchComments(currentCard.cardNumber)" >view all comments</button>
+    </div>
+    </div>
+    <div>
+      
+    </div>
+    <ion-infinite-scroll ng-if="!cards.noMoreCardsAvailable" on-infinite="cards.loadMoreCards()" distance="30%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

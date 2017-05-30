@@ -1,0 +1,27 @@
+<ion-view title="My Cards" id="page8">
+  <ion-content class="has-header">
+  <div style="background: #f5f5f5;">
+     <div collection-repeat="currentCard in mycards.queue" class="list card" id="cards-card21" style="margin: 0 0 10px 0;box-shadow: none">
+      <ion-item class="item-avatar dateBar" id="cards-list-item6">
+        <!-- <img ng-src="{{currentCard.profilepicurl || '../img/avatar_1.png'}}"> -->
+        <p style="color: darkgrey;">{{currentCard.time | date:'d MMM yy'}}</p>
+      </ion-item>
+      <ion-slides disable-side-menu-drag="" ng-show="currentCard.sliderInCreate.length>0" options="{'loop': false}" slider="slider1" delegate-handle="slider1" id="cards-slider1" style="width:100%;height:300px;">
+        <ion-slide-page id="cards-slide24" ng-repeat="image in currentCard.sliderInCreate" style="background-image: url('{{image.imageSrc}}'); background-size: cover"><img ng-src={{image.imageSrc}} style=""></ion-slide-page>
+      </ion-slides>
+      <div class="item item-body" style="border-top: 0;margin: 0;padding: 5px 10px;" id="cards-list-item-container2">
+        <div id="cards-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">{{currentCard.aboutThePost}}</p>
+        </div>
+      </div>
+    <ion-list id="myCards-list7">
+        <ion-item ng-repeat="option in currentCard.options"  style="border: 0;font-size: 14px;padding: 5px 10px 10px 10px;" id="myCards-list-item11">{{option.option}}
+        <span style="float: right;">{{option.votes}} Votes</span>
+        </ion-item>
+      </ion-list>
+
+    <button id="cards-button22" style="padding-bottom: 14px;font-weight:500;font-size:14px;border-radius: 0px;background-color: white;color: black;text-align: left;border: 0;margin-top: 0px;margin-bottom: 0px;min-height: 9px;line-height: initial;" class="button button-positive  button-block">view all comments</button>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>
